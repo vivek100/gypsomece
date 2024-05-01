@@ -1,0 +1,120 @@
+.__element_highlighter_highlighted {
+    outline: 2px solid #2196F3;
+    background-color: rgba(33, 150, 243, 0.3);
+  }
+
+.__element_highlighter_highlighted_playing {
+    outline: 2px solid #2196F3;
+    background-color: rgba(33, 150, 243, 0.3);
+    /* Adding the pulsating animation */
+    animation: pulsate-shadow 2s infinite;
+  }
+
+  @keyframes pulsate-shadow {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 69, 0, 0.5); /* Orangish red, medium opacity */
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(255, 69, 0, 1); /* Orangish red, full opacity */
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(255, 69, 0, 0.5); /* Return to original shadow */
+    }
+  }
+  
+.__element_highlighter_popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 10000;
+}
+
+#overlay-top, #overlay-bottom, #overlay-left, #overlay-right {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.1); 
+  backdrop-filter: blur(1px);
+  transition: all 0.5s ease;
+  display: none;
+}
+
+#playerdiv {
+  left: 0;
+  top: 0;
+  margin-left: 0;
+}
+
+.notificationForWait {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  z-index: 1000;
+}
+
+.hideNotifForWait {
+  display: none;
+}
+
+.close-notif-btn {
+  float: right;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.messageParagraph {
+  margin: 5px 0; /* Adds vertical margin for better spacing */
+  padding: 5px; /* New padding for the message */
+}
+
+.timer-bar {
+  height: 5px;
+  background-color: #4CAF50;
+  width: 0%;
+  transition: width 5s linear;
+}
+
+.player-message-box {
+  width: 400px;
+  height: 224px; /* 16:9 aspect ratio */
+  background-color: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  
+  /* Centering the box on the page */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  z-index: 1000;
+
+  /*centering the message inside the box*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-player-message-box {
+  display: none;
+}
+
+.text-player-message-box {
+  margin: 0; /* Ensure no extra spacing */
+  text-align: center; /* Center the text */
+  font-size: 40px;
+}
+
